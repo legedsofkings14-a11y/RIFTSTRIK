@@ -333,7 +333,7 @@ func _input(event: InputEvent) -> void:
         if event.index == move_touch:
             _update_joystick(event.position)
         elif event.index == look_touch:
-            var delta := event.position - last_look
+            var delta: Vector2 = event.position - last_look
             yaw -= delta.x * 0.006
             pitch = clamp(pitch - delta.y * 0.004, -1.0, 1.0)
             last_look = event.position
