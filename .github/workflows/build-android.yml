@@ -1,0 +1,30 @@
+name: Build RIFTSTRIKE Android APK
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: barichello/godot-ci:4.4.1
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Prepare build directory
+        run: mkdir -p build
+
+      - name: Export Android APK
+        run: godot --headless --verbose --path . --export-debug "Android" build/RIFTSTRIKE.apk
+
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: RIFTSTRIKE-Android-APK
+          path: build/RIFTSTRIKE.apk
+          if-no-files-found: error
