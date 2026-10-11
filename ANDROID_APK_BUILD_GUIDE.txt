@@ -1,0 +1,28 @@
+RIFTSTRIKE — Android APK cloud-build package
+
+This is the RIFTSTRIKE Godot 3D prototype plus a GitHub Actions workflow intended to build an Android APK in the cloud.
+
+IMPORTANT
+- This package is not itself an APK.
+- The workflow has not been executed or verified in this environment.
+- It builds a local/offline prototype only; online 5v5 networking is not implemented.
+- If the export fails, the GitHub Actions log will show the exact error and the project/preset may need adjustments.
+
+BUILD USING ONLY YOUR ANDROID PHONE
+1. Extract this ZIP with Samsung My Files.
+2. In a browser, open https://github.com/ and sign in (or create an account).
+3. Create a new repository named RIFTSTRIKE. For the easiest first setup, make it Public.
+4. Upload the CONTENTS of this extracted folder to the repository root, preserving the .github/workflows/build-android.yml path. Make sure project.godot is at the repository root, not nested in another folder.
+   - On GitHub mobile, use the browser's desktop site if file upload or hidden .github folders are not available.
+   - If the website does not let you upload the .github folder, create the workflow file from the repository's Actions tab or use a browser in desktop mode.
+5. Open the repository's Actions tab. Select “Build RIFTSTRIKE Android APK” and tap “Run workflow”. A push to main should also trigger the workflow automatically.
+6. Wait for the workflow to finish. If it succeeds, open that run and find Artifacts near the bottom.
+7. Download “RIFTSTRIKE-Android-APK”, extract the artifact ZIP, and you should find RIFTSTRIKE.apk.
+8. Open the APK on your Samsung phone and approve “Install unknown apps” for the app you used to download/open it, if Android asks.
+
+If you want to install the APK, Android may require enabling installation from the specific source app (for example, Chrome or My Files). Only install APKs you built or trust.
+
+Project status
+- First-person 3D prototype with procedural arena, weapon shape, touch controls, and local bots.
+- Not a finished game; graphics are placeholder geometry.
+- No real online multiplayer, matchmaking, accounts, or 5v5 servers.
